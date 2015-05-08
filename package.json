@@ -1,0 +1,15 @@
+{
+  "name": "fix_heise_preisvergleich",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "heise",
+    "greasemonkey"
+  ],
+  "author": "Per Guth <mail@perguth.de>",
+  "license": "AGPLv3"
+}
