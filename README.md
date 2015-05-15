@@ -32,6 +32,11 @@ Besonderheiten:
 # Install
 
 1. Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+- Click https://github.com/pguth/fix_heise_preisvergleich/raw/master/fix_heise_preisvergleich.user.js
+- You will automatically get a Greasemonkey install prompt.
+
+## Build it yourself
+1. Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 - Generate your script file. See [Greasemonkey Hacks](http://commons.oreilly.com/wiki/index.php/Greasemonkey_Hacks/Getting_Started#Provide_a_Default_Configuration) for help with the greasemonkey configuration file.  
 
   ```sh
@@ -44,12 +49,13 @@ gulp watch
 ```
 
 1. `CTRL+C` to end the watch process - it generated our needed output already.
-- Now just drag and drop the fresh `fix_heise_preisvergleich.user.js`` into your Firefox.
+- Now just drag and drop the fresh `fix_heise_preisvergleich.user.js` into your Firefox.
 
 
 # Development
 
-- Don't forget to enable `extensions.greasemonkey.fileIsGreaseable` in FF so Greasemonkey will run on local files.
+1. Don't forget to enable `extensions.greasemonkey.fileIsGreaseable` in FF so Greasemonkey will run on local files.
+- Install once in FF/Greasemonkey then replace the `fix_heise_preisvergleich.user.js` with a softlink to the automatically generated file in your local repo. That way Greasemonkey will always have the most recent script.
 
 ## Original spec string
 
