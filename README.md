@@ -29,11 +29,27 @@ Besonderheiten:
 - [x] "optisches Laufwerk:" streichen ausser wenn n/a dahintersteht, dann schreiben "kein opt...."
 
 
-## Development
+# Install
+
+1. Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+- Generate your script file. See [Greasemonkey Hacks](http://commons.oreilly.com/wiki/index.php/Greasemonkey_Hacks/Getting_Started#Provide_a_Default_Configuration) for help with the greasemonkey configuration file.  
+
+  ```sh
+git clone https://github.com/pguth/fix_heise_preisvergleich.git
+cd fix_heise_preisvergleich
+# Configure your `greasemonkey.conf`:
+nano greasemonkey.conf
+npm install
+gulp watch
+```
+
+1. `CTRL+C` to end the watch process - it generated our needed output already.
+- Now just drag and drop the fresh `fix_heise_preisvergleich.user.js`` into your Firefox.
+
+
+# Development
 
 - Don't forget to enable `extensions.greasemonkey.fileIsGreaseable` in FF so Greasemonkey will run on local files.
-- Installation: TODO
-
 
 ## Original spec string
 
