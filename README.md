@@ -1,6 +1,6 @@
 # fix_heise_preisvergleich
 
-*Turn the product tech sheet into something usable.*
+*Turn the product tech sheet (eg. [this one](http://www.heise.de/preisvergleich/eu/asus-zenbook-ux305fa-fb003h-schwarz-90nb06x1-m00070-a1161580.html#art)) into something usable.*
 
 
 ## Functionality
