@@ -1,6 +1,6 @@
 tmp/
-fix_heise_preisvergleich.user.js
-greasemonkey.conf
+#fix_heise_preisvergleich.user.js
+#greasemonkey.conf
 
 # Logs
 logs
