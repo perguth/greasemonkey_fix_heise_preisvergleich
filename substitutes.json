@@ -18,7 +18,8 @@
   "Wireless: ": "",
   "Betriebssystem: ": "",
   "Gewicht: ": "",
-  "Besonderheiten:": "",
+  "Besonderheiten: ": "",
+  "Anschlüsse: ": "",
   
   
   "/^((?!optisches Laufwerk).)*$/": "$& • kein optisches Laufwerk",
