@@ -18,14 +18,18 @@ gulp.task('watch', function () {
     gutil.log('Building...')
     var b = browserify({ debug: true })
     b
-      .transform(babelify)
-      .require('./index.js', { entry: true })
-      .plugin(prepend, getGMConf())
-      .bundle()
-      .on('error', function (err) { gutil.log('Error: ' + err.message) })
-      .pipe(fs.createWriteStream(dest))
+    .transform(babelify)
+    .require('./index.js', { entry: true })
+    .plugin(prepend, getGMConf())
+    .bundle()
+    .on('error', function (err) {
+      gutil.log('Error: ' + err.message) })
+    .pipe(fs.createWriteStream(dest))
   }
-  gulp.watch(['index.js', 'greasemonkey.conf', 'js/**/*.js'], function (event) { 
+  gulp.watch(['index.js', 
+  'greasemonkey.conf',
+  'substitutes.json',
+  'js/**/*.js'], function (event) { 
     build('fix_heise_preisvergleich.user.js')
   })
   build('fix_heise_preisvergleich.user.js')
