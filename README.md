@@ -1,32 +1,11 @@
 # fix_heise_preisvergleich
 
-*Turn the product tech sheet (eg. [this one](http://www.heise.de/preisvergleich/eu/asus-zenbook-ux305fa-fb003h-schwarz-90nb06x1-m00070-a1161580.html#art)) into something usable.*
+*Turn the product tech sheet (eg. [this one](http://www.heise.de/preisvergleich/eu/asus-zenbook-ux305fa-fb003h-schwarz-90nb06x1-m00070-a1161580.html)) into something usable.*
 
 
 ## Functionality
 
-- [x] Produktname vor den Text einfuegen.
-- [x] Replacements:
-  - `zwei Jahre` -> `24M`
-  - `Windows 7 Professional 64bit` -> `Win 7 Pro 64`
-  - `Windows 8.1 Pro 64bit` -> `Win 8.1 Pro 64`
-  - `USB 3.0` -> `USB3`
-  - `USB 2.0` -> `USB2`
-  - `Gb LAN` -> `Gbit LAN`
-  - `Bluetooth` -> `BT`
-  - `Megapixel` -> `MP`
-- [x] Folgende Eintraege ohne Label: 
-  ```
-CPU:
-Festplatte:
-Grafik:
-Display:
-Wireless:
-Betriebssystem:
-Gewicht: 
-Besonderheiten:
-```
-- [x] "optisches Laufwerk:" streichen ausser wenn n/a dahintersteht, dann schreiben "kein opt...."
+Performs various text replacements (see [here](https://github.com/pguth/fix_heise_preisvergleich/blob/master/substitutes.json)) on the tech sheet.
 
 
 # Install
@@ -54,8 +33,9 @@ gulp watch
 
 # Development
 
-1. Don't forget to enable `extensions.greasemonkey.fileIsGreaseable` in FF so Greasemonkey will run on local files.
+- Don't forget to enable `extensions.greasemonkey.fileIsGreaseable` in FF so Greasemonkey will run on local files.
 - Install once in FF/Greasemonkey then replace the `fix_heise_preisvergleich.user.js` with a softlink to the automatically generated file in your local repo. That way Greasemonkey will always have the most recent script.
+- The anchor `#debug` colors all text replacements red and gives out some information on the console.
 
 ## Original spec string
 
