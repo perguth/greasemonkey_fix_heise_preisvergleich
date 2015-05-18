@@ -1,0 +1,25 @@
+{
+  "zwei Jahre": "24M",
+  "Windows 7 Professional 64bit": "Win 7 Pro 64",
+  "Windows 7 Home 64bit": "Win 7 Home 64",
+  "USB 3.0": "USB3",
+  "USB 2.0": "USB2",
+  "Gb LAN": "Gbit LAN",
+  "Bluetooth": "BT",
+  "Megapixel": "MP",
+  "optisches Laufwerk: N/A": "kein optisches Laufwerk",
+  "optisches Laufwerk: DVD+/-RW DL": "DVD+/-RW DL",
+  
+  
+  "CPU: ": "",
+  "Festplatte: ": "",
+  "Grafik: ": "",
+  "Display: ": "",
+  "Wireless: ": "",
+  "Betriebssystem: ": "",
+  "Gewicht: ": "",
+  "Besonderheiten:": "",
+  
+  
+  "/^((?!optisches Laufwerk).)*$/": "$& • kein optisches Laufwerk",
+}

@@ -1,4 +1,19 @@
-function getSpecs () {
+let debug = {
+  enabled: false,
+  log: (str) => {
+    if (debug.enabled) console.log(str)
+  },
+  setDebugFlag: () => {
+    let url = window.location.href.toString()
+    let idx = url.indexOf("#")
+    let anchor = (idx != -1) ? url.substring(idx+1) : ""
+    console.log('[Anchor found] '+ anchor)
+    if (anchor.trim() === 'debug') {
+      debug.enabled = true
+    }
+  }
+}
+let readSpecs = () => {
   let name = 
      document.getElementById('mitte_preisvergleicher')
     .getElementsByTagName('h1')[0]
@@ -8,86 +23,49 @@ function getSpecs () {
      document.getElementById('gh_proddesc')
     .querySelectorAll('.notrans')[0]
     .firstChild.data
-  specs = parseSpecString(specs)
+  
+  debug.log(`[Original Specs] ${specs}`)
   return {name, specs}
 }
-function parseSpecString (string) {
-  string = string.split('•')
-  return string.map(val => val.split(':'))
-}
-function filterSpecialPairs (val) {
-  if (
-    val[1].trim() === 'N/A' &&
-    val[0].trim() === 'optisches Laufwerk'
-  ) return new Array('', 'kein optisches Laufwerk')
-  else return val
-}
-function filterSpecKeys (val) {
-  switch (val[0].trim()) {
-    case 'CPU':
-    case 'Festplatte':
-    case 'Grafik':
-    case 'Display':
-    case 'Wireless':
-    case 'Betriebssystem':
-    case 'Gewicht': 
-    case 'Besonderheiten':
-    break
-    default: return val
+let substituteSpecs = (specs, subs) => {
+  let replacement = (str) => {
+    if (debug.enabled) {
+      if (str === '')
+        return `<b style='color: red;'>― </b> `
+      else {
+        if (str[0] !== '$')
+          return `<b style='color: red;'>${str}</b>`
+        else // ..we have a replacement pattern so:
+          return str.slice(0, 2) + 
+            `<b style='color: red;'>${str.slice(2)}</b>`
+      } 
+    } else return str
   }
-  return new Array('', val[1])
-}
-function filterSpecValues (val, i, array) {
-  if (
-    val[1].trim() === '' || 
-    val[1].trim() === 'N/A'
-  ) return false
-  return true
-}
-function fixSpec (val) {
-  console.log(val)
-  switch (val.trim()) {
-    case 'zwei Jahre': return "24M"
-    case 'Windows 7 Professional 64bit': return "Win 7 Pro 64"
-    case 'Windows 8.1 Pro 64bit': return "Win 8.1 Pro 64"
-    case 'Windows 8.1 64bit': return "Win 8.1 64"
-    case 'USB 3.0': return "USB3"
-    case 'USB 2.0': return "USB2"
-    case 'Gb LAN': return "Gbit LAN"
-    case '1.0 Megapixel': return "1.0 MP"
-    case '2.0 Megapixel': return "2.0 MP"
-    case '3.0 Megapixel': return "3.0 MP"
-    case '4.0 Megapixel': return "4.0 MP"
-    case '5.0 Megapixel': return "5.0 MP"
-    default: return val
+  let convIfRegExp = (str) => {
+    if (str[0] === '/') {
+      return new RegExp(str.slice(1, -1), 'g')
+    } else return str
   }
+  for (let orig in subs) {
+    specs = specs.replace(
+      convIfRegExp(orig), 
+      replacement(subs[orig])
+    )
+  }
+  debug.log(`[New Specs] ${specs}`)
+  return specs
 }
-function makeList (val, i, array) {
-  console.log(i)
-  let entry = ''
-  if (val[0].trim() !== '')
-    entry = val[0] + ': ' + val[1].trim()
-  else
-    entry = val[1].trim()
-  if (i < array.length -1) return entry + ', '
-  else return entry
-}
-function createNewSpecString() {
-  let {name, specs} = getSpecs()
-  specs = specs
-    .map(filterSpecialPairs)
-    .map(filterSpecKeys)
-    .filter(filterSpecValues)
-    .map(val => new Array(val[0], fixSpec(val[1])))
-    .map(makeList)
-    .join('')
-  return name + '<br><br>' + specs
-}
-function fixWebsite () {
+let fixWebsite = () => {
+  debug.setDebugFlag()
+  let {name, specs} = readSpecs()
+  let subs = require('./substitutes.json')
+  let newSpecs = substituteSpecs(specs, subs)
+  
   document.getElementById('gh_proddesc')
     .querySelectorAll('.notrans')[0].innerHTML = 
-    createNewSpecString()
+    newSpecs
 }
 
-fixWebsite()
-
+document.addEventListener('DOMContentLoaded',
+  fixWebsite(), false
+)
