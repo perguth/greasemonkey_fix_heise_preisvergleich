@@ -63,7 +63,7 @@ let fixWebsite = () => {
   
   document.getElementById('gh_proddesc')
     .querySelectorAll('.notrans')[0].innerHTML = 
-    newSpecs
+    `${name} <br><br> ${newSpecs}`
 }
 
 document.addEventListener('DOMContentLoaded',
