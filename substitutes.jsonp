@@ -21,7 +21,7 @@ __jp0({
   "Gewicht: ": "",
   "Besonderheiten: ": "",
   "Anschlüsse: ": "",
-  
-  
-  "/^((?!optisches Laufwerk).)*$/": "$& • kein optisches Laufwerk",
+
 })
+
+// "/^((?!optisches Laufwerk).)*$/": "$& • kein optisches Laufwerk",
