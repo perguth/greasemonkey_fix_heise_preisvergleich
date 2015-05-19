@@ -10,6 +10,10 @@
   ],
   "author": "Per Guth <mail@perguth.de>",
   "license": "AGPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pguth/fix_heise_preisvergleich.git"
+  }
   "devDependencies": {
     "babelify": "^6.1.0",
     "browserify": "^10.1.3",
