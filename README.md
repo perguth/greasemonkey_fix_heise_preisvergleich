@@ -13,7 +13,7 @@
 # Install
 
 1. Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/).
-- Click on [fix_heise_preisvergleich.user.js](https://github.com/pguth/greasemonkey_fix_heise_preisvergleich/raw/master/fix_heise_preisvergleich.user.js) that you'll find in this repo.
+- Click on [greasemonkey_fix_heise_preisvergleich.user.js](https://github.com/pguth/greasemonkey_fix_heise_preisvergleich/raw/master/fix_heise_preisvergleich.user.js) that you'll find in this repo.
 - You will automatically get a Greasemonkey install prompt.
 
 ## Build it yourself
