@@ -1,8 +1,8 @@
 {
-  "name": "fix_heise_preisvergleich",
+  "name": "greasemonkey_fix_heise_preisvergleich",
   "version": "0.1.0",
   "description": "Turn the product tech sheet into something usable.",
-  "main": "fix_heise_preisvergleich.user.js",
+  "main": "greasemonkey_fix_heise_preisvergleich.user.js",
   "keywords": [
     "greasemonkey",
     "heise.de",
@@ -12,7 +12,7 @@
   "license": "AGPLv3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pguth/fix_heise_preisvergleich.git"
+    "url": "https://github.com/pguth/greasemonkey_fix_heise_preisvergleich.git"
   },
   "devDependencies": {
     "babelify": "^6.1.0",

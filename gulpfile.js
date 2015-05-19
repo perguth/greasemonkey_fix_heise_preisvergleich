@@ -30,7 +30,7 @@ gulp.task('watch', function () {
   'greasemonkey.conf',
   'substitutes.jsonp',
   'js/**/*.js'], function (event) { 
-    build('fix_heise_preisvergleich.user.js')
+    build('greasemonkey_fix_heise_preisvergleich.user.js')
   })
-  build('fix_heise_preisvergleich.user.js')
+  build('greasemonkey_fix_heise_preisvergleich.user.js')
 })

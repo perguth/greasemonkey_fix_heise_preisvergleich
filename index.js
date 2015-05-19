@@ -1,5 +1,5 @@
 let fetchFromRemote = false
-let remoteSubRules = 'https://raw.githubusercontent.com/pguth/fix_heise_preisvergleich/master/substitutes.jsonp'
+let remoteSubRules = 'https://raw.githubusercontent.com/pguth/greasemonkey_fix_heise_preisvergleich/master/substitutes.jsonp'
 
 let debug = {
   enabled: false,
