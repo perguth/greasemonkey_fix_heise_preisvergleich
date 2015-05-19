@@ -7,7 +7,7 @@
 
 ## Functionality
 
-- Performs various text replacements (see [this list](https://github.com/pguth/fix_heise_preisvergleich/blob/master/substitutes.json)) on the tech sheet.
+- Performs various text replacements (see [this list](https://github.com/pguth/fix_heise_preisvergleich/blob/master/substitutes.jsonp)) on the tech sheet.
 - Pulls the replacement rules from this Github repo (can be turned off when building it oneself).
 
 # Install
