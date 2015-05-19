@@ -1,5 +1,5 @@
 let fetchFromRemote = true
-let remoteSubRules = 'https://raw.githubusercontent.com/pguth/fix_heise_preisvergleich/master/substitutes.json'
+let remoteSubRules = 'https://raw.githubusercontent.com/pguth/fix_heise_preisvergleich/master/substitutes.jsonp'
 
 let debug = {
   enabled: false,
@@ -74,7 +74,7 @@ function main () {
     jsonp(remoteSubRules, {}, fixWebsite)
   } else {
     debug.log('[Using local rules] ...')
-    let localRules = require('./substitutes.json')
+    let localRules = require('./substitutes.jsonp')
     fixWebsite(null, null, localRules)
   }
 }
