@@ -1,4 +1,4 @@
-let fetchFromRemote = true
+let fetchFromRemote = false
 let remoteSubRules = 'https://raw.githubusercontent.com/pguth/fix_heise_preisvergleich/master/substitutes.jsonp'
 
 let debug = {
@@ -23,8 +23,7 @@ function readSpecs () {
     .firstChild.data
   let specs = 
      document.getElementById('gh_proddesc')
-    .querySelectorAll('.notrans')[0]
-    .firstChild.data
+    .querySelectorAll('.notrans')[0].textContent
   
   debug.log(`[Original Specs] ${specs}`)
   return {name, specs}
@@ -59,7 +58,8 @@ function substituteSpecs (specs, subs) {
 }
 function fixWebsite (err, res, subs) {
   let {name, specs} = readSpecs()
-  subs = res || (subs && debug.log(`[Falling back to/using local rules] ...`))
+  if (res) subs = res
+  else debug.log(`[Falling back to/using local rules] ...`)
   if (err) console.log(`[JSONP error] ${err}`)
   let newSpecs = substituteSpecs(specs, subs)
   
@@ -77,8 +77,8 @@ function main () {
     })
   } else {
     debug.log('[Using local rules] ...')
-    let localRules = require('./substitutes.jsonp')
-    fixWebsite(null, null, localRules)
+    debug.log(require('./substitutes.jsonp').rules)
+    fixWebsite(null, null, require('./substitutes.jsonp').rules)
   }
 }
 
