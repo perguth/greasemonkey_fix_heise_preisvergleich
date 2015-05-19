@@ -2,7 +2,7 @@
 
 *Turn the product tech sheet (eg. [this one](http://www.heise.de/preisvergleich/eu/asus-zenbook-ux305fa-fb003h-schwarz-90nb06x1-m00070-a1161580.html)) into something usable.*
 
-![Example. Changes in red and marked by dashes.](http://imageshack.com/a/img540/7324/pLJmir.png)
+![Example. Changes in red and marked by dashes.](http://imageshack.com/a/img540/7163/MsWDi7.png)
 <small>***⇡ Changes in red and removals marked by dashes for demonstration purposes.***</small>
 
 ## Functionality
