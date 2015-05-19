@@ -13,7 +13,7 @@ Performs various text replacements (see [here](https://github.com/pguth/fix_heis
 # Install
 
 1. Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
-- Click https://github.com/pguth/fix_heise_preisvergleich/raw/master/fix_heise_preisvergleich.user.js
+- Click on [fix_heise_preisvergleich.user.js](https://github.com/pguth/fix_heise_preisvergleich/raw/master/fix_heise_preisvergleich.user.js) that you'll find in this repo.
 - You will automatically get a Greasemonkey install prompt.
 
 ## Build it yourself
