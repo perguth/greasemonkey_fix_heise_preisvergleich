@@ -1,4 +1,4 @@
-{
+__jp0({
   "zwei Jahre": "24M",
   "Windows 7 Professional 64bit": "Win 7 Pro 64",
   "Windows 7 Home 64bit": "Win 7 Home 64",
@@ -23,4 +23,4 @@
   
   
   "/^((?!optisches Laufwerk).)*$/": "$& • kein optisches Laufwerk",
-}
+})

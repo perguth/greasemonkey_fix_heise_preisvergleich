@@ -28,7 +28,7 @@ gulp.task('watch', function () {
   }
   gulp.watch(['index.js', 
   'greasemonkey.conf',
-  'substitutes.json',
+  'substitutes.jsonp',
   'js/**/*.js'], function (event) { 
     build('fix_heise_preisvergleich.user.js')
   })
