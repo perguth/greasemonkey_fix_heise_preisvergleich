@@ -22,7 +22,8 @@
   ```sh
 git clone https://github.com/pguth/fix_heise_preisvergleich.git
 cd fix_heise_preisvergleich
-# Configure your `greasemonkey.conf`:
+# Configure your `greasemonkey.conf`.
+# See [Greasemonkey Hacks](http://commons.oreilly.com/wiki/index.php/Greasemonkey_Hacks/Getting_Started#Provide_a_Default_Configuration) for help with the greasemonkey configuration file.
 nano greasemonkey.conf
 # Configure all the rest in `index.js`
 npm install
