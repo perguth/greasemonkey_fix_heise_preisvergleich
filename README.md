@@ -7,8 +7,8 @@
 
 ## Functionality
 
-Performs various text replacements (see [here](https://github.com/pguth/fix_heise_preisvergleich/blob/master/substitutes.json)) on the tech sheet.
-
+- Performs various text replacements (see [this list](https://github.com/pguth/fix_heise_preisvergleich/blob/master/substitutes.json)) on the tech sheet.
+- Pulls the replacement rules from this Github repo (can be turned off when building it oneself).
 
 # Install
 
@@ -18,13 +18,13 @@ Performs various text replacements (see [here](https://github.com/pguth/fix_heis
 
 ## Build it yourself
 1. Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/).
-- Generate your script file. See [Greasemonkey Hacks](http://commons.oreilly.com/wiki/index.php/Greasemonkey_Hacks/Getting_Started#Provide_a_Default_Configuration) for help with the greasemonkey configuration file.  
 
   ```sh
 git clone https://github.com/pguth/fix_heise_preisvergleich.git
 cd fix_heise_preisvergleich
 # Configure your `greasemonkey.conf`:
 nano greasemonkey.conf
+# Configure all the rest in `index.js`
 npm install
 gulp watch
 ```
