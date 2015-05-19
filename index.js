@@ -32,7 +32,7 @@ function substituteSpecs (specs, subs) {
   let replacement = (str) => {
     if (debug.enabled) {
       if (str === '')
-        return `<b style='color: red;'>― </b> `
+        return `<b style='color: red;'> ― </b> `
       else {
         if (str[0] !== '$')
           return `<b style='color: red;'>${str}</b>`

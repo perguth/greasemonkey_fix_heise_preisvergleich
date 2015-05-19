@@ -3,7 +3,7 @@ function __jp0 (obj) { localRules.rules = obj }
 module.exports = localRules
 
 __jp0({
-  "/(Gelistet seit:.*)/": " <b style='color: red;'>― </b>",
+  "/(Gelistet seit:.*)/": "",
 
   "drei Jahre": "36M",
   "zwei Jahre": "24M",
