@@ -71,7 +71,10 @@ function main () {
   if (fetchFromRemote) {
     debug.log('[Fetch from remote] ...')
     let jsonp = require('jsonp')
-    jsonp(remoteSubRules, {}, fixWebsite)
+    jsonp(remoteSubRules, {}, (err, res) => {
+      debug.log(`[Received remote rules] ...`)
+      fixWebsite(err, res)
+    })
   } else {
     debug.log('[Using local rules] ...')
     let localRules = require('./substitutes.jsonp')
