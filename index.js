@@ -65,7 +65,8 @@ function fixWebsite (err, res, subs) {
   
   document.getElementById('gh_proddesc')
     .querySelectorAll('.notrans')[0].innerHTML = 
-    `${name} <br><br> ${newSpecs}`
+    `${name} • ${newSpecs} <br><br>
+      <small><a href="https://github.com/pguth/greasemonkey_fix_heise_preisvergleich/edit/master/substitutes.jsonp">(edit substitution list)</a></small>`
 }
 function main () {
   if (fetchFromRemote) {
